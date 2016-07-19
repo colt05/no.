@@ -8,14 +8,14 @@ function latestCommit() {
   var j = JSON.parse(response);
   return j[0].sha;
 }
-function latestURL() {
+function latestURL(num) {
   var hash = latestCommit();
   var part1 = "//cdn.rawgit.com/colt05/no./";
-  var part2 = "/game.js?hash=";
+  var part2 = "/game.js".concat(num).concat("?hash=");
   var part3 = Date.now();
   return part1.concat(hash.concat(part2.concat(part3)));
 }
-function importGet(callback) {
+function importGame(num, callback) {
   var callbackscript = function() {return;};
     if (callback === undefined) {
     // do nothing
@@ -25,7 +25,7 @@ function importGet(callback) {
   var head = document.getElementsByTagName('head')[0];
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src = latestURL();
+  script.src = latestURL(num);
   //script.onreadystatechange = callbackscript;
   script.onload = callbackscript;
   head.appendChild(script);
