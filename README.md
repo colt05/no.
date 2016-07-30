@@ -10,4 +10,4 @@ https://keybase.io/triplesec/
 # etc.
 no?
 # wait, you could put punctuation in the repo name?
-no;
+no; you probably still can.
