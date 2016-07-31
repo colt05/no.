@@ -25,7 +25,7 @@ function verify(_key, next) {
 //the key and code need to be put together
 
 var plaintext = buff.toString();
-if (md5(plaintext).concat(_key) == "1f15c8645d67ef61676436dc1568cf2f") {
+if (md5(_key.concat(plaintext)) == "1f15c8645d67ef61676436dc1568cf2f") {
   alert("correct");
   next();
 }
