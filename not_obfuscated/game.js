@@ -21,7 +21,9 @@ function verify(_key, next) {
       alert("Error! Did you input the correct password?");
     }
 });
-//the key and code are the same
+
+//the key and code need to be put together
+
 var plaintext = buff.toString();
 if (md5(plaintext).concat(_key) == "1f15c8645d67ef61676436dc1568cf2f") {
   alert("correct");
